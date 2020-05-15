@@ -1,0 +1,70 @@
+# Project: demo
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = output/exceptio.o output/genlib.o output/graphics.o output/random.o output/simpio.o output/strlib.o output/imgui.o output/DrawCoor.o output/createlist.o output/main.o output/drawLinear.o output/mouseclick.o output/DrawSquare.o output/DrawCircle.o output/DrawBG.o
+LINKOBJ  = output/exceptio.o output/genlib.o output/graphics.o output/random.o output/simpio.o output/strlib.o output/imgui.o output/DrawCoor.o output/createlist.o output/main.o output/drawLinear.o output/mouseclick.o output/DrawSquare.o output/DrawCircle.o output/DrawBG.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -mwindows
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"../libgraphics" -I"../simpleGUI"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"../libgraphics" -I"../simpleGUI"
+BIN      = output/demo.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+output/exceptio.o: ../libgraphics/exceptio.c
+	$(CC) -c ../libgraphics/exceptio.c -o output/exceptio.o $(CFLAGS)
+
+output/genlib.o: ../libgraphics/genlib.c
+	$(CC) -c ../libgraphics/genlib.c -o output/genlib.o $(CFLAGS)
+
+output/graphics.o: ../libgraphics/graphics.c
+	$(CC) -c ../libgraphics/graphics.c -o output/graphics.o $(CFLAGS)
+
+output/random.o: ../libgraphics/random.c
+	$(CC) -c ../libgraphics/random.c -o output/random.o $(CFLAGS)
+
+output/simpio.o: ../libgraphics/simpio.c
+	$(CC) -c ../libgraphics/simpio.c -o output/simpio.o $(CFLAGS)
+
+output/strlib.o: ../libgraphics/strlib.c
+	$(CC) -c ../libgraphics/strlib.c -o output/strlib.o $(CFLAGS)
+
+output/imgui.o: ../simpleGUI/imgui.c
+	$(CC) -c ../simpleGUI/imgui.c -o output/imgui.o $(CFLAGS)
+
+output/DrawCoor.o: ../democode/DrawCoor.c
+	$(CC) -c ../democode/DrawCoor.c -o output/DrawCoor.o $(CFLAGS)
+
+output/createlist.o: ../democode/createlist.c
+	$(CC) -c ../democode/createlist.c -o output/createlist.o $(CFLAGS)
+
+output/main.o: ../democode/main.c
+	$(CC) -c ../democode/main.c -o output/main.o $(CFLAGS)
+
+output/drawLinear.o: ../democode/drawLinear.c
+	$(CC) -c ../democode/drawLinear.c -o output/drawLinear.o $(CFLAGS)
+
+output/mouseclick.o: ../democode/mouseclick.c
+	$(CC) -c ../democode/mouseclick.c -o output/mouseclick.o $(CFLAGS)
+
+output/DrawSquare.o: ../democode/DrawSquare.c
+	$(CC) -c ../democode/DrawSquare.c -o output/DrawSquare.o $(CFLAGS)
+
+output/DrawCircle.o: ../democode/DrawCircle.c
+	$(CC) -c ../democode/DrawCircle.c -o output/DrawCircle.o $(CFLAGS)
+
+output/DrawBG.o: ../democode/DrawBG.c
+	$(CC) -c ../democode/DrawBG.c -o output/DrawBG.o $(CFLAGS)
