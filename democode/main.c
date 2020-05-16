@@ -28,6 +28,7 @@ int bingzhuang = 0;
 int backtomenu=0;
 int zhuzhuang = 0;
 int menu = 1;
+int adddata = 0;
 
 // 用户的字符事件响应函数
 void CharEventProcess(char ch)
@@ -90,7 +91,7 @@ void drawMenu()
 		"保存  |Ctrl-S",
         "退出  |Ctrl-E"};
 	static char * menuListEdit[] = {"编辑",
-		"读入",
+		"新建",
 		"增加",
 		"删除"};
 	static char * menuListDraw[] = {"图像",
@@ -135,8 +136,10 @@ void drawMenu()
 	selection = menuList(GenUIID(0),x+w,y-h, w, wlist, h, menuListEdit,sizeof(menuListEdit)/sizeof(menuListEdit[0]));
 	if( selection>0 ) selectedLabel = menuListEdit[selection];
     if(selection==1){
-    	    InitConsole(); 
-    		tmp = Createlist(); /*输入新的链表*/
+//    	    InitConsole(); 
+//    		tmp = Createlist(); /*输入新的链表*/
+		tmp = NULL;
+		adddata = 1; 
     }
     if(selection==2)
     {
@@ -273,6 +276,18 @@ void display()
 		drawButtons();	
 	}
 	
+	if(adddata){
+		DisplayClear();
+		drawbg();
+		drawMenu();
+		Drawinput();
+//		tmp = NULL;
+		if(button(GenUIID(0), winwidth/15, 2*y , w, h, name4)){
+			adddata = 0;
+			menu = 1;
+			tmp = NULL;
+		};
+	} 
 	//折线图 
 	if(zhexian){
 		DisplayClear();

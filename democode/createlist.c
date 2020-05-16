@@ -25,9 +25,9 @@ Pnode Createlist(){
 		}
 		printf("请输入date%d：",count); 
 		scanf("%s",&p->date[0]);
-		count++;
 		p->next=NULL;
 		head = Insert(head,p);
+		count++;
 	}
 	return head;
 }
@@ -278,4 +278,14 @@ Pnode add(Pnode head)
 	return head;
 	} 
 
- 
+//读取输入框中信息
+Pnode ReadnewData(Pnode head,double data,string date){
+	Pnode p;
+	p = (Pnode)malloc(sizeof(struct node));
+	p->data = data;
+//	p->date[0] = date;
+	strcpy(p->date,date);
+	p->next = NULL;
+	head = Insert(head,p);
+	return head;
+}

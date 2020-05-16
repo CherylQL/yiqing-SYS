@@ -4,8 +4,8 @@
 CPP      = g++.exe
 CC       = gcc.exe
 WINDRES  = windres.exe
-OBJ      = output/exceptio.o output/genlib.o output/graphics.o output/random.o output/simpio.o output/strlib.o output/imgui.o output/DrawCoor.o output/createlist.o output/main.o output/drawLinear.o output/mouseclick.o output/DrawSquare.o output/DrawCircle.o output/DrawBG.o
-LINKOBJ  = output/exceptio.o output/genlib.o output/graphics.o output/random.o output/simpio.o output/strlib.o output/imgui.o output/DrawCoor.o output/createlist.o output/main.o output/drawLinear.o output/mouseclick.o output/DrawSquare.o output/DrawCircle.o output/DrawBG.o
+OBJ      = output/exceptio.o output/genlib.o output/graphics.o output/random.o output/simpio.o output/strlib.o output/imgui.o output/DrawCoor.o output/createlist.o output/main.o output/drawLinear.o output/mouseclick.o output/DrawSquare.o output/DrawCircle.o output/DrawBG.o output/Drawinput.o
+LINKOBJ  = output/exceptio.o output/genlib.o output/graphics.o output/random.o output/simpio.o output/strlib.o output/imgui.o output/DrawCoor.o output/createlist.o output/main.o output/drawLinear.o output/mouseclick.o output/DrawSquare.o output/DrawCircle.o output/DrawBG.o output/Drawinput.o
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -mwindows
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"../libgraphics" -I"../simpleGUI"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"../libgraphics" -I"../simpleGUI"
@@ -68,3 +68,6 @@ output/DrawCircle.o: ../democode/DrawCircle.c
 
 output/DrawBG.o: ../democode/DrawBG.c
 	$(CC) -c ../democode/DrawBG.c -o output/DrawBG.o $(CFLAGS)
+
+output/Drawinput.o: ../democode/Drawinput.c
+	$(CC) -c ../democode/Drawinput.c -o output/Drawinput.o $(CFLAGS)

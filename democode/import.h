@@ -53,6 +53,7 @@ Pnode circle;
 //创建链表 
 Pnode Createlist();
 Pnode Insert(Pnode head,Pnode num);
+Pnode ReadnewData(Pnode head,double data,string date);
 //读取链表长 
 int countnum(Pnode head,double* max,double* min);
 //获取data总和
@@ -64,7 +65,7 @@ Pnode del(Pnode head,string date);
 //增加数据 
 Pnode add(Pnode head); 
  //未来预测           有两个参数  医学水平和流动性 
-    Pnode predict(Pnode head ,  int yixue , int liudongxing);   
+Pnode predict(Pnode head ,  int yixue , int liudongxing);   
     
     
  
@@ -106,6 +107,10 @@ Pnode PickDot(Pnode head,double mx,double my);
 
 //画logo 
 void readmatrix(); 
+
+//输入界面
+void Drawinput(); 
+
 //画坐标轴 
 void DrawCoor(double x,double y);
 void DrawDot(double x,double y);										//画（x,y）上的标记 
